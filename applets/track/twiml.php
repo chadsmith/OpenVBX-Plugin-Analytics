@@ -15,9 +15,9 @@ if(!empty($_REQUEST['From'])) {
     @$GA->trackPageView($url, $title);
 }
 
-$response = new Response();
+$response = new TwimlResponse;
 
 if(!empty($next))
-    $response->addRedirect($next);
+	$response->redirect($next);
 
-$response->Respond();
+$response->respond();
